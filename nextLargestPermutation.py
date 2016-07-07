@@ -1,7 +1,7 @@
 '''
-For each digit in the number, loop through the digits before it till we find a digit less than it.
+For each digit in the number, starting from the end, loop through the digits before it till we find a digit less than it.
 If we find one such digit, we can return the next largest permutation by swapping the two, and sorting
-the digits from the ones digit upto, but not including the leftmost digit swapped, in ascending order, left to right.
+the digits from the ones digit up to, but not including the leftmost digit swapped, in ascending order, left to right.
 Otherwise, return that it is not possible.
 '''
 
@@ -26,7 +26,7 @@ def nextLargestPermutation(x: int):
 
 # If we find a digit where one of digits following it is less than it, swap the two
 # Reverse the list back
-# Then sort the digits, left to right, in ascending order, from one digit to the right of the leftmost digit swapped, until the end
+# Then sort the digits, left to right, in ascending order, from the digit to the right of the leftmost digit swapped, until the end
         for j in range(len(remaining)):
             if int(remaining[j]) < int(checking):
                 checking, remaining[j] = remaining[j], checking
